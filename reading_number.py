@@ -1,66 +1,27 @@
-def transcript(x):
 
-    lst = [i for i in x]
-    if lst[0]=='1':
-        if lst[1]=='0':
-            return 'Ten'
-        elif lst[1]=='1':
-            return 'Eleven'
-        elif lst[1]=='2':
-            return 'Twelve'
-        elif lst[1]=='3':
-            return 'Thirteen'
-        elif lst[1]=='4':
-            return 'Fourteen'
-        elif lst[1]=='5':
-            return 'Fifteen'
-        elif lst[1]=='6':
-            return 'Sixteen'
-        elif lst[1]=='7':
-            return 'Seventeen'
-        elif lst[1]=='8':
-            return 'Eighteen'
-        else:
-            return 'Nineteen'
-    elif lst[0]=='2':
-        return 'Twenty '+number(lst[1])
-    elif lst[0]=='3':
-        return 'Thirty '+number(lst[1])
-    elif lst[0]=='4':
-        return 'Fourty '+number(lst[1])
-    elif lst[0]=='5':
-        return 'Fifty '+number(lst[1])
-    elif lst[0]=='6':
-        return 'Sixty '+number(lst[1])
-    elif lst[0]=='7':
-        return 'Seventy '+number(lst[1])
-    elif lst[0]=='8':
-        return 'Eighty '+number(lst[1])
+
+
+def reading_number(number):
+    dictionary1 = {1:"one", 2:"two", 3:"three", 4:"four", 5:"five", 6:"six", 7 :"seven", 8:"eiğht", 9:"nine"}
+    dictionary2 = {11:"eleven",12:"twelve",13:"thirteen",14:"fourteen", 15:"fifteen", 16:"sixteen",
+                   17:"seventeen", 18:"eiğhteen", 19:"nineteen"}
+    dictionary3 = {1:"ten", 2:"twenty",3:"thirty",4:"forty",5:"fifty",6:"sixty", 7:"seventy", 8:"eighty", 9:"ninety"}
+    
+    number2=int(number)
+    digit1=int(number[1])
+    digit10=int(number[0])
+   
+    
+    if number2<10:
+        return (dictionary1.get(digit1))
+        
+    elif number2>10 and number2<20:
+        return (dictionary2.get(number2))
+        
+    elif number2%10==0:
+        return (dictionary3.get(digit10))
+    
     else:
-        return 'Ninety '+number(lst[1])
-
-def number(y):
-
-    if y == '0':
-        return ''
-    elif y == '1':
-        return 'one'
-    elif y == '2':
-        return 'two'
-    elif y == '3':
-        return 'three'
-    elif y == '4':
-        return 'four'
-    elif y == '5':
-        return 'five'
-    elif y == '6':
-        return 'six'
-    elif y == '7':
-        return 'seven'
-    elif y == '8':
-        return 'eight'
-    else:
-        return 'nine'
-
-a=input('Please insert the two digit numbers:')
-print(a," -------------------> ",transcript(a))
+        return (dictionary3.get(digit10) + " " + dictionary1.get(digit1))
+                   
+print (reading_number(input("iki haneli bir sayı giriniz :")))

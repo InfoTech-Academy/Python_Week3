@@ -1,11 +1,10 @@
-def unique_list(x):
-    y=set(x)
-    unic_lst=list(y)
-    unic_lst.sort()
-    return unic_lst
-
-raw_list=[1,2,3,3,3,3,3,4,7,8,5,4,9,11,21,34,12]
-
-print("Repeted List",raw_list)
-
-print("Unrepeted List",unique_list(raw_list))
+def unique(my_list):
+    output1=[]
+    
+    my_list=list(my_list)
+    for i in my_list:
+        if i not in output1:
+            output1.append(i)
+    return output1
+        
+print(unique([1,2,3,4,3,3,5,9,8,7,5,7]))
