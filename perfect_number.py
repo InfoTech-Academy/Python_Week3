@@ -1,22 +1,13 @@
+"""perfect_number"""
+a, d = 0, []
+for i in range (1,1001):
+    c = []
+    for a in range(1,i):
+        if i%a == 0:
+            c.append(a)
+        else:
+            continue
+    if sum(c)==i:
+        d.append(i)
+print("between 1-1000 between perfect number is : ",d)
 
-def perfect_number(number):
-    bölenler=[]
-    
-    for i in range(1,number):
-        if number%i==0:
-            bölenler.append(i)
-    
-    
-    if sum(bölenler)==number:
-        return number
-    
-    
-fonksiyon_ciktisi=[]            
-for i in range(1,1000):
-    if (perfect_number(i)) != None:
-        fonksiyon_ciktisi.append(perfect_number(i))
-print(*filter(perfect_number,fonksiyon_ciktisi)) 
-    
-
-
-        
